@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FriendsFlightScanner</string>
+
+    <string name="departure_city">Departure city</string>
+    <string name="arrival_city">Arrival city</string>
+    <string name="search">Search</string>
+</resources>

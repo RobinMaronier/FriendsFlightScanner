@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rmaro.friendsflightscanner.Activities.MainActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/departure_city"
+        android:id="@+id/find_city_depart_button"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/find_city_depart_button"
+        android:text="choix_ville"
+        android:gravity="center"
+        android:id="@+id/city_depart_text"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/arrival_city"
+        android:id="@+id/find_city_arrival_button"
+        android:layout_below="@+id/city_depart_text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/find_city_arrival_button"
+        android:text="choix_ville_arrivé"
+        android:gravity="center"
+        android:id="@+id/city_arrival_text"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search"
+        android:layout_below="@+id/city_arrival_text"
+        android:id="@+id/search_button"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="result"
+        android:layout_below="@+id/search_button"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:id="@+id/result_simple_price_search_text"/>
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FriendsFlightScanner</string>
+
+    <string name="departure_city">Ville de départ</string>
+    <string name="arrival_city">Ville d\'arrivée</string>
+    <string name="search">Rechercher</string>
+</resources>
