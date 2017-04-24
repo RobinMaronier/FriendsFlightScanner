@@ -5,4 +5,5 @@
     <string name="departure_city">Ville de départ</string>
     <string name="arrival_city">Ville d\'arrivée</string>
     <string name="search">Rechercher</string>
+    <string name="local">fr-FR</string>
 </resources>

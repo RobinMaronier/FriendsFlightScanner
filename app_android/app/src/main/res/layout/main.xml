@@ -9,11 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/departure_city"
-        android:id="@+id/find_city_depart_button"/>
+        android:id="@+id/find_place_depart_button"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/find_city_depart_button"
+        android:layout_below="@+id/find_place_depart_button"
         android:text="choix_ville"
         android:gravity="center"
         android:id="@+id/city_depart_text"/>
@@ -22,13 +22,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/arrival_city"
-        android:id="@+id/find_city_arrival_button"
+        android:id="@+id/find_place_arrival_button"
         android:layout_below="@+id/city_depart_text"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/find_city_arrival_button"
+        android:layout_below="@+id/find_place_arrival_button"
         android:text="choix_ville_arrivé"
         android:gravity="center"
         android:id="@+id/city_arrival_text"/>

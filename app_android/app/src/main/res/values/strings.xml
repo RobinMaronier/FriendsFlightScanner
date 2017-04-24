@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">FriendsFlightScanner</string>
+    <string name="PREFIX_SCYSCANNER_URL" translatable="false">http://partners.api.skyscanner.net/apiservices/</string>
+    <string name="APIKEY_SKYSCANNER" translatable="false">ro511513711740164227372371959862</string>
 
     <string name="departure_city">Departure city</string>
     <string name="arrival_city">Arrival city</string>
     <string name="search">Search</string>
+    <string name="local">en-US</string>
 </resources>
