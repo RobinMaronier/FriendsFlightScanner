@@ -10,6 +10,7 @@ import retrofit2.Callback;
 import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Query;
 
 /**
  * Created by rmaro on 24/04/2017.
@@ -39,12 +40,12 @@ public class SkyScannerObservable extends ObservableTask {
     private interface GetCachePricesCheapestServices {
         @GET(getCachePricesCheapest)
         Call<ResponseBody> request(@Header("Accept") String accept,
-                                   @Field("country") String country,
-                                   @Field("currency") String currency,
-                                   @Field("locale") String local,
-                                   @Field("originPlace") String originPlace,
-                                   @Field("destinationPlace") String destinationPlace,
-                                   @Field("outboundPartialDate") String departureDate,
-                                   @Field("apiKey") String apiKey);
+                                   @Query("country") String country,
+                                   @Query("currency") String currency,
+                                   @Query("locale") String local,
+                                   @Query("originPlace") String originPlace,
+                                   @Query("destinationPlace") String destinationPlace,
+                                   @Query("outboundPartialDate") String departureDate,
+                                   @Query("apiKey") String apiKey);
     }
 }

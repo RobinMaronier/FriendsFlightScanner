@@ -18,16 +18,18 @@ import java.util.ArrayList;
 public class FindPlaceAdapter extends RecyclerView.Adapter<FindPlaceHolder> {
 
     private ArrayList<ReferencesPlaces> listPlaces = new ArrayList<>();
+    private FindPlaceReturn setter;
 
-    public FindPlaceAdapter(ArrayList<ReferencesPlaces> listPlaces) {
+    public FindPlaceAdapter(ArrayList<ReferencesPlaces> listPlaces, FindPlaceReturn setter) {
         this.listPlaces = listPlaces;
+        this.setter = setter;
         Log.i("INFO", "" + listPlaces.size());
         notifyDataSetChanged();
     }
 
     @Override
     public void onBindViewHolder(FindPlaceHolder holder, int position) {
-        final ReferencesPlaces contentItem = listPlaces.get(position);
+        ReferencesPlaces contentItem = listPlaces.get(position);
         holder.setTextAirport(contentItem.placeName);
         holder.setTextCountry(contentItem.countryName);
     }
@@ -40,6 +42,17 @@ public class FindPlaceAdapter extends RecyclerView.Adapter<FindPlaceHolder> {
     @Override
     public FindPlaceHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.holder_place, parent, false);
-        return new FindPlaceHolder(itemView);
+        final FindPlaceHolder cell = new FindPlaceHolder(itemView);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickOnCell(cell);
+            }
+        });
+        return cell;
+    }
+
+    private void clickOnCell(FindPlaceHolder cell) {
+        setter.setPlaceChose(listPlaces.get(cell.getAdapterPosition()));
     }
 }

@@ -29,7 +29,7 @@ import retrofit2.Response;
  * Created by rmaro on 24/04/2017.
  */
 
-public class FindPlaceFragment extends MyFragment<ReferencesPlaces> implements SearchView.OnQueryTextListener {
+public class FindPlaceFragment extends MyFragment<ReferencesPlaces> implements SearchView.OnQueryTextListener, FindPlaceReturn {
 
     private SkyScannerPlacesObservable requestPlaces;
     private SearchView searchText;
@@ -61,12 +61,13 @@ public class FindPlaceFragment extends MyFragment<ReferencesPlaces> implements S
 
     @Override
     public boolean onQueryTextChange(String query) {
-        if (query.length() >= 2)
+        if (query.length() >= 2) {
+            final FindPlaceReturn This = this;
             requestPlaces.getPlaceByQuery(query, new Callback<ListReferencesPlaces>() {
                 @Override
                 public void onResponse(Call<ListReferencesPlaces> call, Response<ListReferencesPlaces> response) {
                     if (response.isSuccessful()) {
-                        listPlaces.setAdapter(new FindPlaceAdapter(new ArrayList<ReferencesPlaces>(response.body().listPlace)));
+                        listPlaces.setAdapter(new FindPlaceAdapter(new ArrayList<ReferencesPlaces>(response.body().listPlace), This));
                     } else {
                         // TODO
                         Log.i("ERROR", "error here 1");
@@ -81,6 +82,7 @@ public class FindPlaceFragment extends MyFragment<ReferencesPlaces> implements S
                     Log.i("ERROR", t.getMessage());
                 }
             });
+        }
         return false;
     }
 
@@ -93,4 +95,9 @@ public class FindPlaceFragment extends MyFragment<ReferencesPlaces> implements S
     public ReferencesPlaces getResult() {
        return result;
    }
+
+    public void setPlaceChose(ReferencesPlaces place) {
+        result = place;
+        finish();
+    }
 }
