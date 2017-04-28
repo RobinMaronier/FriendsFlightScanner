@@ -8,7 +8,8 @@ import android.widget.TextView;
 import com.rmaro.friendsflightscanner.Common.FragmentReturn;
 import com.rmaro.friendsflightscanner.Common.MyActivity;
 import com.rmaro.friendsflightscanner.Common.MyFragment;
-import com.rmaro.friendsflightscanner.Fragments.FindPlaceFragment;
+import com.rmaro.friendsflightscanner.Fragments.FindPlaces.FindPlaceFragment;
+import com.rmaro.friendsflightscanner.Models.ReferencesPlaces;
 import com.rmaro.friendsflightscanner.R;
 
 public class MainActivity extends MyActivity implements FragmentReturn {
@@ -69,6 +70,7 @@ public class MainActivity extends MyActivity implements FragmentReturn {
 
     @Override
     public void fragmentReturn(MyFragment fragment) {
+        ReferencesPlaces result = (ReferencesPlaces) fragment.getResult();
         super.fragmentReturn(fragment);
     }
 }

@@ -11,6 +11,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 
@@ -37,7 +38,7 @@ public class SkyScannerReferencesObservable extends ObservableTask {
     private interface GetCountriesServices {
         @GET(getCountry)
         Call<List<ReferencesCountries>> request(@Header("Accept") String accept,
-                                                @Field("local") String country,
+                                                @Field("locale") String country,
                                                 @Field("apiKey") String apiKey);
     }
 }

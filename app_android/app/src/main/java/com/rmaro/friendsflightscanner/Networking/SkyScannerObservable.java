@@ -41,7 +41,7 @@ public class SkyScannerObservable extends ObservableTask {
         Call<ResponseBody> request(@Header("Accept") String accept,
                                    @Field("country") String country,
                                    @Field("currency") String currency,
-                                   @Field("local") String local,
+                                   @Field("locale") String local,
                                    @Field("originPlace") String originPlace,
                                    @Field("destinationPlace") String destinationPlace,
                                    @Field("outboundPartialDate") String departureDate,

@@ -15,7 +15,7 @@ import android.widget.FrameLayout;
  */
 
 
-public abstract class MyFragment extends Fragment {
+public abstract class MyFragment<R> extends Fragment {
         protected Context context = null;
         protected MyActivity activity = null;
         protected FragmentReturn fragmentReturn = null;
@@ -51,5 +51,9 @@ public abstract class MyFragment extends Fragment {
             if (fragmentReturn != null) {
                 fragmentReturn.fragmentReturn(this);
             }
+        }
+
+        public R getResult() {
+            return null;
         }
 }
